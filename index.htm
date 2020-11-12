@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Event Listeners</title>
+    <style>
+        .color-box{
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <button class="event-button">Click Me</button>
+
+    <input placeholder="Type something" class="input-to-copy">
+    <p class="p-to-copy">There is nothimg in this paragraph</p>
+
+
+    <div class="color-box"></div>
+    <input placeholder="type your color here" class="input-color"> 
+
+
+    <script>
+        const button = document.querySelector('.event-button');
+        button.addEventListener('click', function(){
+            alert('Thank you for clicking on me')
+        });
+
+         const input = document.querySelector('.input-to-copy');
+         const paragraph =document.querySelector('.p-to-copy');
+         input.addEventListener('keyup', function(){
+             paragraph.innerText = input.value; 
+         });
+
+         const inputColor =document.querySelector('.input-color');
+         const paragraphDiv = document.querySelector('.color-box');
+
+         inputColor.addEventListener('change', function(){
+             paragraphDiv.style.backgroundColor = inputColor.value;
+         });
+
+    </script>
+
+</body>
+</html>
